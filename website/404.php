@@ -29,8 +29,8 @@ require 'includes/head-index.php';
 <?php 
 require 'includes/header-top.php';
 require 'includes/header.php';
-require 'includes/main-container.php';
-require 'includes/footer.php';
+require 'includes/404-container.php';
+//require 'includes/footer.php';
 
 ?>
 

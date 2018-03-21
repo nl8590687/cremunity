@@ -1,22 +1,18 @@
-
 <!DOCTYPE html>
 <!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->
 <!--[if !IE]><!-->
 <html lang="zh-cn">
 <!--<![endif]-->
-	
-	
 <?php
-
-require 'includes/head-index.php';
-
+require 'includes/head-post.php';
+	
 ?>
 
 	<!-- body classes: 
 			"boxed": boxed layout mode e.g. <body class="boxed">
 			"pattern-1 ... pattern-9": background patterns for boxed layout mode e.g. <body class="boxed pattern-1"> 
 	-->
-	<body class="front">
+	<body>
 		<!-- scrollToTop -->
 		<!-- ================ -->
 		<div class="scrollToTop"><i class="icon-up-open-big"></i></div>
@@ -24,13 +20,13 @@ require 'includes/head-index.php';
 		<!-- page wrapper start -->
 		<!-- ================ -->
 		<div class="page-wrapper">
-
-
 <?php 
-require 'includes/header-top.php';
+require 'includes/head-post.php';
 require 'includes/header.php';
-require 'includes/main-container.php';
+require 'includes/post-container.php';
 require 'includes/footer.php';
+
+
 
 ?>
 
@@ -46,10 +42,6 @@ require 'includes/footer.php';
 		<!-- Modernizr javascript -->
 		<script type="text/javascript" src="plugins/modernizr.js"></script>
 
-		<!-- jQuery REVOLUTION Slider  -->
-		<script type="text/javascript" src="plugins/rs-plugin/js/jquery.themepunch.tools.min.js"></script>
-		<script type="text/javascript" src="plugins/rs-plugin/js/jquery.themepunch.revolution.min.js"></script>
-
 		<!-- Isotope javascript -->
 		<script type="text/javascript" src="plugins/isotope/isotope.pkgd.min.js"></script>
 
@@ -61,6 +53,9 @@ require 'includes/footer.php';
 
 		<!-- Appear javascript -->
 		<script type="text/javascript" src="plugins/jquery.appear.js"></script>
+
+		<!-- Sharrre javascript -->
+		<script type="text/javascript" src="plugins/jquery.sharrre.js"></script>
 
 		<!-- Count To javascript -->
 		<script type="text/javascript" src="plugins/jquery.countTo.js"></script>

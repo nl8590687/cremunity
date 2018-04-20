@@ -1,6 +1,6 @@
 <?php
 
-$website_title = 'Home';
+$website_title = 'Cremunity';
 $website_author ='htmlcoder.me';
 $website_icon_url = 'images/favicon.ico';
 

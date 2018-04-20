@@ -1,5 +1,5 @@
 <?php
-
+$n=10;
 echo '
 
 <!-- main-container start -->
@@ -18,8 +18,38 @@ echo '
 							<h1 class="page-title">Blog</h1>
 							<div class="separator-2"></div>
 							<p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas nulla suscipit <br class="hidden-sm hidden-xs"> unde rerum mollitia dolorum.</p>
-							<!-- page-title end -->
+							<!-- page-title end -->';
+							$i=0;
+							for($i=0;$i<$n;$i++)
+								echo '
 
+							<!-- blogpost start -->
+							<article class="clearfix blogpost object-non-visible" data-animation-effect="fadeInUpSmall" data-effect-delay="200">
+								<div class="blogpost-body">
+									<div class="post-info">
+										<span class="day">12</span>
+										<span class="month">Sept 2014</span>
+									</div>
+									<div class="blogpost-content">
+										<header>
+											<h2 class="title"><a href="post.php">Text Blogpost</a></h2>
+											<div class="submitted"><i class="fa fa-user pr-5"></i> by <a href="#">John Doe</a></div>
+										</header>
+										<p>Mauris dolor sapien, malesuada at interdum ut, hendrerit eget lorem. Nunc interdum mi neque, et  sollicitudin purus fermentum ut. Suspendisse faucibus nibh odio, a vehicula eros pharetra in. Maecenas  ullamcorper commodo rutrum. In iaculis lectus vel augue eleifend dignissim. Aenean viverra semper sollicitudin.</p>
+									</div>
+								</div>
+								<footer class="clearfix">
+									<ul class="links pull-left">
+										<li><i class="fa fa-comment-o pr-5"></i> <a href="#">22 comments</a> |</li> 
+										<li><i class="fa fa-tags pr-5"></i> <a href="#">tag 1</a>, <a href="#">tag 2</a>, <a href="#">long tag 3</a> </li>
+									</ul>
+									<a class="pull-right link" href="post.php"><span>Read more</span></a>
+								</footer>
+							</article>
+							<!-- blogpost end -->';
+							
+							if(false)
+								echo '
 							<!-- blogpost start -->
 							<article class="clearfix blogpost object-non-visible" data-animation-effect="fadeInUpSmall" data-effect-delay="200">
 								<div class="overlay-container">
@@ -38,7 +68,7 @@ echo '
 									</div>
 									<div class="blogpost-content">
 										<header>
-											<h2 class="title"><a href="blog-post.html">Blogpost with image</a></h2>
+											<h2 class="title"><a href="post.php">Blogpost with image</a></h2>
 											<div class="submitted"><i class="fa fa-user pr-5"></i> by <a href="#">John Doe</a></div>
 										</header>
 										<p>Mauris dolor sapien, malesuada at interdum ut, hendrerit eget lorem. Nunc interdum mi neque, et  sollicitudin purus fermentum ut. Suspendisse faucibus nibh odio, a vehicula eros pharetra in. Maecenas  ullamcorper commodo rutrum. In iaculis lectus vel augue eleifend dignissim. Aenean viverra semper sollicitudin.</p>
@@ -49,7 +79,7 @@ echo '
 										<li><i class="fa fa-comment-o pr-5"></i> <a href="#">22 comments</a> |</li> 
 										<li><i class="fa fa-tags pr-5"></i> <a href="#">tag 1</a>, <a href="#">tag 2</a>, <a href="#">long tag 3</a> </li>
 									</ul>
-									<a class="pull-right link" href="blog-post.html"><span>Read more</span></a>
+									<a class="pull-right link" href="post.php"><span>Read more</span></a>
 								</footer>
 							</article>
 							<!-- blogpost end -->
@@ -167,18 +197,13 @@ echo '
 									<a class="pull-right link" href="blog-post.html"><span>Read more</span></a>
 								</footer>
 							</article>
-							<!-- blogpost end -->
-
+							<!-- blogpost end -->';
+							
+							echo '
 							<!-- pagination start -->
-							<ul class="pagination">
-								<li><a href="#"><<</a></li>
-								<li class="active"><a href="#">1 <span class="sr-only">(current)</span></a></li>
-								<li><a href="#">2</a></li>
-								<li><a href="#">3</a></li>
-								<li><a href="#">4</a></li>
-								<li><a href="#">5</a></li>
-								<li><a href="#">>></a></li>
-							</ul>
+							';
+							require 'pagination.php';
+							echo '
 							<!-- pagination end -->
 
 						</div>

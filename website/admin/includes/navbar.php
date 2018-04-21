@@ -108,6 +108,18 @@ echo '
                             <a href="."><i class="fa fa-dashboard fa-fw nav_icon"></i>Dashboard</a>
                         </li>
                         <li>
+                            <a href="#"><i class="fa fa-laptop nav_icon"></i>文章<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                <li>
+                                    <a href="posts.php">文章列表</a>
+                                </li>
+								<li>
+                                    <a href="post-editor.php">写文章</a>
+                                </li>
+                            </ul>
+                            <!-- /.nav-second-level -->
+                        </li>
+						<li>
                             <a href="#"><i class="fa fa-laptop nav_icon"></i>Layouts<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>

@@ -1,5 +1,5 @@
 <?php
-
+$navbar_title = 'Cremunity';
 echo '
 
 <!-- Navigation -->
@@ -11,7 +11,7 @@ echo '
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href=".">Modern</a>
+                <a class="navbar-brand" href=".">' . $navbar_title . '</a>
             </div>
             <!-- /.navbar-header -->
             <ul class="nav navbar-nav navbar-right">
@@ -82,19 +82,19 @@ echo '
 							<strong>Account</strong>
 						</li>
 						<li class="m_2"><a href="#"><i class="fa fa-bell-o"></i> Updates <span class="label label-info">42</span></a></li>
-						<li class="m_2"><a href="#"><i class="fa fa-envelope-o"></i> Messages <span class="label label-success">42</span></a></li>
+						<li class="m_2"><a href="message.php"><i class="fa fa-envelope-o"></i> Messages <span class="label label-success">42</span></a></li>
 						<li class="m_2"><a href="#"><i class="fa fa-tasks"></i> Tasks <span class="label label-danger">42</span></a></li>
-						<li><a href="#"><i class="fa fa-comments"></i> Comments <span class="label label-warning">42</span></a></li>
+						<li><a href="comment.php"><i class="fa fa-comments"></i> Comments <span class="label label-warning">42</span></a></li>
 						<li class="dropdown-menu-header text-center">
 							<strong>Settings</strong>
 						</li>
-						<li class="m_2"><a href="#"><i class="fa fa-user"></i> Profile</a></li>
-						<li class="m_2"><a href="#"><i class="fa fa-wrench"></i> Settings</a></li>
+						<li class="m_2"><a href="profile.php"><i class="fa fa-user"></i> Profile</a></li>
+						<li class="m_2"><a href="setting.php"><i class="fa fa-wrench"></i> Settings</a></li>
 						<li class="m_2"><a href="#"><i class="fa fa-usd"></i> Payments <span class="label label-default">42</span></a></li>
 						<li class="m_2"><a href="#"><i class="fa fa-file"></i> Projects <span class="label label-primary">42</span></a></li>
 						<li class="divider"></li>
 						<li class="m_2"><a href="#"><i class="fa fa-shield"></i> Lock Profile</a></li>
-						<li class="m_2"><a href="#"><i class="fa fa-lock"></i> Logout</a></li>	
+						<li class="m_2"><a href="logout.php"><i class="fa fa-lock"></i> Logout</a></li>	
 	        		</ul>
 	      		</li>
 			</ul>
@@ -107,6 +107,7 @@ echo '
                         <li>
                             <a href="."><i class="fa fa-dashboard fa-fw nav_icon"></i>Dashboard</a>
                         </li>
+						
                         <li>
                             <a href="#"><i class="fa fa-laptop nav_icon"></i>文章<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
@@ -119,15 +120,44 @@ echo '
                             </ul>
                             <!-- /.nav-second-level -->
                         </li>
+						
 						<li>
-                            <a href="#"><i class="fa fa-laptop nav_icon"></i>Layouts<span class="fa arrow"></span></a>
+                            <a href="#"><i class="fa fa-envelope nav_icon"></i>消息通知<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="grids.html">Grid System</a>
+                                    <a href="message.php">私信</a>
+                                </li>
+                                <li>
+                                    <a href="comment.php">评论和回复</a>
                                 </li>
                             </ul>
                             <!-- /.nav-second-level -->
                         </li>
+						
+						<li>
+                            <a href="statistic.php"><i class="fa fa-flask nav_icon"></i>统计数据<!--<span class="fa arrow"></span>--></a>
+							<!--<ul class="nav nav-second-level">
+                                <li>
+                                    <a href="statistic.php">概览</a>
+                                </li>
+                            </ul>-->
+                            <!-- /.nav-second-level -->
+                        </li>
+						
+						<li>
+                            <a href="#"><i class="fa fa-sitemap fa-fw nav_icon"></i>设置<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                <li>
+                                    <a href="profile.php">个人资料</a>
+                                </li>
+                                <li>
+                                    <a href="setting.php">系统设置</a>
+                                </li>
+                            </ul>
+                            <!-- /.nav-second-level -->
+                        </li>
+						
+						
                         <li>
                             <a href="#"><i class="fa fa-indent nav_icon"></i>Menu Levels<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
@@ -140,21 +170,8 @@ echo '
                             </ul>
                             <!-- /.nav-second-level -->
                         </li>
-                        <li>
-                            <a href="#"><i class="fa fa-envelope nav_icon"></i>Mailbox<span class="fa arrow"></span></a>
-                            <ul class="nav nav-second-level">
-                                <li>
-                                    <a href="inbox.html">Inbox</a>
-                                </li>
-                                <li>
-                                    <a href="compose.html">Compose email</a>
-                                </li>
-                            </ul>
-                            <!-- /.nav-second-level -->
-                        </li>
-                        <li>
-                            <a href="widgets.html"><i class="fa fa-flask nav_icon"></i>Widgets</a>
-                        </li>
+                        
+                        
                          <li>
                             <a href="#"><i class="fa fa-check-square-o nav_icon"></i>Forms<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
@@ -176,18 +193,7 @@ echo '
                             </ul>
                             <!-- /.nav-second-level -->
                         </li>
-                        <li>
-                            <a href="#"><i class="fa fa-sitemap fa-fw nav_icon"></i>Css<span class="fa arrow"></span></a>
-                            <ul class="nav nav-second-level">
-                                <li>
-                                    <a href="media.html">Media</a>
-                                </li>
-                                <li>
-                                    <a href="login.html">Login</a>
-                                </li>
-                            </ul>
-                            <!-- /.nav-second-level -->
-                        </li>
+                        
                     </ul>
                 </div>
                 <!-- /.sidebar-collapse -->

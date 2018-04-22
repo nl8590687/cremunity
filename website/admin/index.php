@@ -5,7 +5,6 @@ $islogin = True;
 
 if($islogin==True){
 	echo '
-
 <!DOCTYPE HTML>
 <html>
 ';
@@ -360,6 +359,7 @@ var detail = new Rickshaw.Graph.HoverDetail({
 }
 else
 {
-	echo '您未登录';
+	echo'<script> location.replace ("login.php") </script>'; 
+	exit();
 }
 ?>

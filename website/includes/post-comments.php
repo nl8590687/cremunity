@@ -7,7 +7,7 @@ echo '
 								<h2 class="title">There are 3 comments</h2>
 
 								<!-- comment start -->
-								<div class="comment clearfix">
+								<div id = "comment-1" class="comment clearfix">
 									<div class="comment-avatar">
 										<img src="images/avatar.jpg" alt="avatar">
 									</div>
@@ -21,7 +21,7 @@ echo '
 									</div>
 									
 									<!-- comment start -->
-									<div class="comment clearfix">
+									<div id = "comment-2" class="comment clearfix">
 										<div class="comment-avatar">
 											<img src="images/avatar.jpg" alt="avatar">
 										</div>
@@ -40,7 +40,7 @@ echo '
 								<!-- comment end -->
 
 								<!-- comment start -->
-								<div class="comment clearfix">
+								<div id = "comment-3" class="comment clearfix">
 									<div class="comment-avatar">
 										<img src="images/avatar.jpg" alt="avatar">
 									</div>

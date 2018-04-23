@@ -82,7 +82,7 @@ echo '
 							<strong>Account</strong>
 						</li>
 						<li class="m_2"><a href="#"><i class="fa fa-bell-o"></i> Updates <span class="label label-info">42</span></a></li>
-						<li class="m_2"><a href="message.php"><i class="fa fa-envelope-o"></i> Messages <span class="label label-success">42</span></a></li>
+						<li class="m_2"><a href="inbox.php"><i class="fa fa-envelope-o"></i> Messages <span class="label label-success">42</span></a></li>
 						<li class="m_2"><a href="#"><i class="fa fa-tasks"></i> Tasks <span class="label label-danger">42</span></a></li>
 						<li><a href="comment.php"><i class="fa fa-comments"></i> Comments <span class="label label-warning">42</span></a></li>
 						<li class="dropdown-menu-header text-center">
@@ -125,7 +125,7 @@ echo '
                             <a href="#"><i class="fa fa-envelope nav_icon"></i>消息通知<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="message.php">私信</a>
+                                    <a href="inbox.php">私信</a>
                                 </li>
                                 <li>
                                     <a href="comment.php">评论和回复</a>

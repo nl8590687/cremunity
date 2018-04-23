@@ -5,7 +5,7 @@ echo '
 <!DOCTYPE HTML>
 <html>
 <head>
-<title>评论和回复 - Cremunity</title>
+<title>私信 - Cremunity</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
@@ -36,7 +36,7 @@ echo '
         <div id="page-wrapper">
         <div class="graphs">
 	     <div class="xs">
-  	     <h3>评论列表</h3>
+  	     <h3>私信列表</h3>
   	        
         <div class="col-md-64 inbox_right">
          	<form action="#" method="GET">
@@ -145,7 +145,7 @@ echo '
                                 Google
                             </td>
                             <td>
-                                <a href="../post.php#comment-1">Nullam quis risus eget urna mollis ornare vel eu leo</a>
+                                <a href="message.php">Nullam quis risus eget urna mollis ornare vel eu leo</a>
                             </td>
                             <td>
                             </td>
@@ -190,6 +190,7 @@ echo '
                                 Nullam quis risus eget urna mollis ornare vel eu leo
                             </td>
                             <td>
+                                <i class="fa fa-paperclip"></i>
                             </td>
                             <td>
                                 8 march
@@ -210,6 +211,7 @@ echo '
                                 Lorem ipsum dolor sit amet, consectetuer adipiscing elit
                             </td>
                             <td>
+                                <i class="fa fa-paperclip"></i>
                             </td>
                             <td>
                                 4 march

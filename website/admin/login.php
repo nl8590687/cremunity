@@ -1,6 +1,10 @@
 <?php
 
-echo '
+
+$islogin = False;
+
+if($islogin==False){
+	echo '
 
 <!DOCTYPE HTML>
 <html>
@@ -8,8 +12,9 @@ echo '
 <title>登陆 - Cremunity</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="keywords" content="Modern Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template, 
-Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
+
+<meta name="keywords" content="" />
+
 <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
  <!-- Bootstrap Core CSS -->
 <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" />
@@ -36,17 +41,18 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		<input id="unamebox" name="uName" type="text" class="text" value=""   placeholder="请输入用户名">
 		<input id="pswdbox" name="uPwd" type="password" class="text" value=""   placeholder="请输入密码">
 		<div class="submit"><input id="bt_login" type="submit" onclick="myfunction()" value="登录"></div>
-		<div class="login-social-link">
+		<!--<div class="login-social-link">
           <a href="index.html" class="facebook">
               Facebook
           </a>
           <a href="index.html" class="twitter">
               Twitter
           </a>
-        </div>
+        </div>-->
 		<ul class="new">
 			<li class="new_left"><p><a href="#">Forgot Password ?</a></p></li>
 			<li class="new_right"><p class="sign">New here ?<a href="register.php"> Sign Up</a></p></li>
+			<li class="new_left"><p><a href=".."> ← 返回到Cremunity</a></p></li>
 			<div class="clearfix"></div>
 		</ul>
 	</form>
@@ -54,9 +60,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <div class="copy_layout login">
 ';
 
-require 'includes/copyright.php';
+	require 'includes/copyright.php';
 
-echo '
+	echo '
 </div>
 </body>
 <script language=javascript> 
@@ -215,7 +221,12 @@ function myfunction()
 
 
 ';
-
+}
+else
+{
+	echo'<script> location.replace (".") </script>'; 
+	exit();
+}
 
 
 ?>

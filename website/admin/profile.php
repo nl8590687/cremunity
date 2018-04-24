@@ -91,6 +91,7 @@ echo '
     	
 			
 ';
+$arg_copyright='';
 require 'includes/copyright.php';
 echo '
 		</div>

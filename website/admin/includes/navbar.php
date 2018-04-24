@@ -98,8 +98,8 @@ echo '
 	        		</ul>
 	      		</li>
 			</ul>
-			<form class="navbar-form navbar-right">
-              <input type="text" class="form-control" value="Search..." onfocus="this.value = "";" onblur="if (this.value == "") {this.value = "Search...";}">
+			<form class="navbar-form navbar-right" id="searchform" action="../search.php" method="GET" accept-charset="utf-8">
+              <input type="text" id="searchbox" name="searchword" class="form-control" value="Search..." onfocus="if(this.value==\'Search...\')this.value = \'\';" onblur="if (this.value == \'\') {this.value = \'Search...\';}">
             </form>
             <div class="navbar-default sidebar" role="navigation">
                 <div class="sidebar-nav navbar-collapse">
@@ -135,13 +135,8 @@ echo '
                         </li>
 						
 						<li>
-                            <a href="statistic.php"><i class="fa fa-flask nav_icon"></i>统计数据<!--<span class="fa arrow"></span>--></a>
-							<!--<ul class="nav nav-second-level">
-                                <li>
-                                    <a href="statistic.php">概览</a>
-                                </li>
-                            </ul>-->
-                            <!-- /.nav-second-level -->
+                            <a href="statistic.php"><i class="fa fa-flask nav_icon"></i>统计数据</a>
+							
                         </li>
 						
 						<li>

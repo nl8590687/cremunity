@@ -415,64 +415,65 @@ echo '
 				</div>
 				
 				
-			<div class="graphs">
-				<div class="widget_6">
-					<div class="clearfix">
-					<div class="graph_box">
-						<div class="col-md-4 grid_2">
-							<div class="grid_1">
-								<h3>Circular</h3>
-								<canvas id="doughnut" height="375" width="500" style="width: 400px; height: 300px;"></canvas>
-							</div>
-						</div>
-						<div class="col-md-4 grid_2">
-							<div class="grid_1">
-								<h3>Line</h3>
-								<canvas id="line" height="375" width="500" style="width: 400px; height: 300px;"></canvas>
-							</div>
-						</div>
-						<div class="col-md-4 grid_2">
-							<div class="grid_1">
-								<h3>PolarArea</h3>
-								<canvas id="polarArea" height="375" width="500" style="width: 400px; height: 300px;"></canvas>
-							</div>
-						</div>
-						<div class="clearfix"></div>
-					</div>
-				</div>
-				<div class="widget_7">
-				
-					<div class="graph_box">
-						<div class="col-md-4 grid_2">
-							<div class="grid_1">
-								<h3>Bar</h3>
-								<canvas id="bar" height="375" width="500" style="width: 400px; height: 300px;"></canvas>
-							</div>
-						</div>
-						<div class="col-md-4 grid_2">
-							<div class="grid_1">
-								<h3>Pie</h3>
-								<canvas id="pie" height="375" width="500" style="width: 400px; height: 300px;"></canvas>
-							</div>
-						</div>
-						<div class="col-md-4 grid_2">
-							<div class="grid_1">
-								<h3>Radar</h3><canvas id="radar" height="375" width="500" style="width: 400px; height: 300px;"></canvas>
-							</div>
-						</div>
+				<div class="graphs">
+					<div class="widget_6">
 						<div class="clearfix">
+							<div class="graph_box">
+								<div class="col-md-4 grid_2">
+									<div class="grid_1">
+										<h3>Circular</h3>
+										<canvas id="doughnut" height="375" width="500" style="width: 400px; height: 300px;"></canvas>
+									</div>
+								</div>
+								<div class="col-md-4 grid_2">
+									<div class="grid_1">
+										<h3>Line</h3>
+										<canvas id="line" height="375" width="500" style="width: 400px; height: 300px;"></canvas>
+									</div>
+								</div>
+								<div class="col-md-4 grid_2">
+									<div class="grid_1">
+										<h3>PolarArea</h3>
+										<canvas id="polarArea" height="375" width="500" style="width: 400px; height: 300px;"></canvas>
+									</div>
+								</div>
+								<div class="clearfix"></div>
+							</div>
 						</div>
 					</div>
+					<div class="widget_7">
+					
+						<div class="graph_box">
+							<div class="col-md-4 grid_2">
+								<div class="grid_1">
+									<h3>Bar</h3>
+									<canvas id="bar" height="375" width="500" style="width: 400px; height: 300px;"></canvas>
+								</div>
+							</div>
+							<div class="col-md-4 grid_2">
+								<div class="grid_1">
+									<h3>Pie</h3>
+									<canvas id="pie" height="375" width="500" style="width: 400px; height: 300px;"></canvas>
+								</div>
+							</div>
+							<div class="col-md-4 grid_2">
+								<div class="grid_1">
+									<h3>Radar</h3><canvas id="radar" height="375" width="500" style="width: 400px; height: 300px;"></canvas>
+								</div>
+							</div>
+							<div class="clearfix">
+							</div>
+						</div>
 					
 		
 					
 		
+						<div class="clearfix"></div>
+					
+					
+					</div>
 					<div class="clearfix"></div>
-					
-					
-				</div>
-				<div class="clearfix"></div>
-			<script>
+				<script>
 
 		var doughnutData = [
 				{
@@ -601,9 +602,10 @@ echo '
 	new Chart(document.getElementById("bar").getContext("2d")).Bar(barChartData);
 	new Chart(document.getElementById("pie").getContext("2d")).Pie(pieData);
 	
-				</script>
-			</div>
+					</script>
+				</div>
 ';
+$arg_copyright='';
 require 'includes/copyright.php';
 echo '
 			</div>

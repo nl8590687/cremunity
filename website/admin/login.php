@@ -60,6 +60,7 @@ if($islogin==False){
 <div class="copy_layout login">
 ';
 
+	$arg_copyright=' login';
 	require 'includes/copyright.php';
 
 	echo '

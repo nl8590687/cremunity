@@ -343,6 +343,7 @@ var detail = new Rickshaw.Graph.HoverDetail({
 		<div class="clearfix"> </div>
 	    </div>
 		';
+		$arg_copyright='';
 		require 'includes/copyright.php';
 		echo '
 		</div>

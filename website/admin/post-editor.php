@@ -204,6 +204,7 @@ echo '
    </div>
 ';
 
+$arg_copyright='';
 require 'includes/copyright.php';
 
 echo '

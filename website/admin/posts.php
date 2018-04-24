@@ -182,6 +182,7 @@ echo $navigate_tool; //显示翻页导航按钮工具
 echo '
 			</div>';
 
+$arg_copyright='';
 require 'includes/copyright.php';
 
 echo '

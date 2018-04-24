@@ -102,6 +102,7 @@ echo '
 		 
 ';
 //grid_3 grid_5
+$arg_copyright='';
 require 'includes/copyright.php';
 
 echo '

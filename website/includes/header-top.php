@@ -52,9 +52,9 @@ echo '<!-- header-top start -->
 										<button type="button" class="btn dropdown-toggle" data-toggle="dropdown"><i class="fa fa-search"></i> Search</button>
 										<ul class="dropdown-menu dropdown-menu-right dropdown-animation">
 											<li>
-												<form role="search" class="search-box">
+												<form role="search" class="search-box"  id="searchform" action="search.php" method="GET" accept-charset="utf-8">
 													<div class="form-group has-feedback">
-														<input type="text" class="form-control" placeholder="Search">
+														<input type="text" id="searchbox" name="searchword" class="form-control" placeholder="Search">
 														<i class="fa fa-search form-control-feedback"></i>
 													</div>
 												</form>
@@ -65,20 +65,20 @@ echo '<!-- header-top start -->
 										<button type="button" class="btn dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> Login</button>
 										<ul class="dropdown-menu dropdown-menu-right dropdown-animation">
 											<li>
-												<form class="login-form">
+												<form class="login-form" id="dw__login" action="admin/login.php" method="post" accept-charset="utf-8">
 													<div class="form-group has-feedback">
 														<label class="control-label">Username</label>
-														<input type="text" class="form-control" placeholder="">
+														<input id="unamebox" name="uName" type="text" class="form-control" placeholder="">
 														<i class="fa fa-user form-control-feedback"></i>
 													</div>
 													<div class="form-group has-feedback">
 														<label class="control-label">Password</label>
-														<input type="password" class="form-control" placeholder="">
+														<input id="pswdbox" name="uPwd" type="password" class="form-control" placeholder="">
 														<i class="fa fa-lock form-control-feedback"></i>
 													</div>
-													<button type="submit" class="btn btn-group btn-dark btn-sm">Log In</button>
+													<button id="bt_login" type="submit" class="btn btn-group btn-dark btn-sm" onclick="func_login()">Log In</button>
 													<span>or</span>
-													<button type="submit" class="btn btn-group btn-default btn-sm">Sing Up</button>
+													<button type="button" class="btn btn-group btn-default btn-sm" onclick="location.replace (\'admin/register.php\')">Sing Up</button>
 													<ul>
 														<li><a href="#">Forgot your password?</a></li>
 													</ul>
@@ -145,6 +145,18 @@ echo '<!-- header-top start -->
 					</div>
 				</div>
 			</div>
-			<!-- header-top end --> ';
+			<!-- header-top end --> 
+			<script src="js/md5.js"></script>
+			<script>
+				function func_login()
+				{
+					var input_pswdbox = document.getElementById(\'pswdbox\')
+					var passwd = input_pswdbox.value
+					var passwd_md5 = MD5(passwd)
+					input_pswdbox.value = passwd_md5
+				}
+			</script>
+			';
+			
 
 ?>

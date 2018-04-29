@@ -11,7 +11,7 @@ echo '
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href=".">' . $navbar_title . '</a>
+                <a class="navbar-brand" href="..">' . $navbar_title . '</a>
             </div>
             <!-- /.navbar-header -->
             <ul class="nav navbar-nav navbar-right">
@@ -146,13 +146,15 @@ echo '
                                     <a href="profile.php">个人资料</a>
                                 </li>
                                 <li>
-                                    <a href="setting.php">系统设置</a>
+                                    <a href="setting.php">账号设置</a>
                                 </li>
                             </ul>
                             <!-- /.nav-second-level -->
                         </li>
 						
-						
+';
+if(false)
+echo'
                         <li>
                             <a href="#"><i class="fa fa-indent nav_icon"></i>Menu Levels<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
@@ -188,7 +190,8 @@ echo '
                             </ul>
                             <!-- /.nav-second-level -->
                         </li>
-                        
+';
+echo '
                     </ul>
                 </div>
                 <!-- /.sidebar-collapse -->

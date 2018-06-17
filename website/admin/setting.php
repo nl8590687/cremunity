@@ -1,5 +1,8 @@
 <?php
 
+require 'includes/checklogin.php';
+
+if($islogin==True){
 echo '
 
 <!DOCTYPE HTML>
@@ -369,7 +372,12 @@ echo '
 
 
 ';
-
+}
+else
+{
+	echo'<script> location.replace ("login.php") </script>'; 
+	exit();
+}
 
 
 ?>

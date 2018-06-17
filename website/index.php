@@ -1,17 +1,14 @@
-
 <!DOCTYPE html>
 <!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->
 <!--[if !IE]><!-->
 <html lang="zh-cn">
 <!--<![endif]-->
 	
-	
 <?php
 
 require 'includes/head-index.php';
 
 ?>
-
 	<!-- body classes: 
 			"boxed": boxed layout mode e.g. <body class="boxed">
 			"pattern-1 ... pattern-9": background patterns for boxed layout mode e.g. <body class="boxed pattern-1"> 
@@ -24,7 +21,6 @@ require 'includes/head-index.php';
 		<!-- page wrapper start -->
 		<!-- ================ -->
 		<div class="page-wrapper">
-
 
 <?php 
 require 'includes/header-top.php';

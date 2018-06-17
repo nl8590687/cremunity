@@ -1,7 +1,9 @@
 <?php
 
+require 'includes/checklogin.php';
 
-$islogin = True;
+
+//$islogin = True;
 
 if($islogin==True){//当用户登陆的时候
 echo '

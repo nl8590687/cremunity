@@ -1,4 +1,11 @@
 <?php
+
+$con = mysqli_connect("localhost","root","123456");
+if (!$con)
+{
+  die('Could not connect: ' . mysqli_error());
+}
+
 $n=10;
 echo '
 
@@ -20,6 +27,7 @@ echo '
 							<p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas nulla suscipit <br class="hidden-sm hidden-xs"> unde rerum mollitia dolorum.</p>
 							<!-- page-title end -->';
 							$i=0;
+							//开始显示方格子
 							for($i=0;$i<$n;$i++)
 								echo '
 
@@ -222,5 +230,5 @@ echo '
 
 ';
 
-
+mysqli_close($con);
 ?>

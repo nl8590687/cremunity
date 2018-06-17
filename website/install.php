@@ -3,7 +3,7 @@
 $con = mysqli_connect("localhost","root","123456");
 if (!$con)
 {
-  die('Could not connect: ' . mysql_error());
+  die('Could not connect: ' . mysqli_error());
 }
 
 if (mysqli_query($con,"CREATE DATABASE cremunity"))
@@ -326,9 +326,9 @@ else
 
 // **************** 数据库信息初始化部分 ********************
 
-//调用存储过程 ADD_USERINFO
+//调用存储过程 ADD_USERINFO 初始密码12345
 $sql = "
-call ADD_USERINFO('admin','827CCB0EEA8A706C4C34A16891F84E7B');
+call ADD_USERINFO('admin','3FB302986B41040D67332E52F26919F1');
 ";
 $r = mysqli_query($con,$sql);
 if ($r)

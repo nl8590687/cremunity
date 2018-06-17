@@ -1,16 +1,23 @@
 <?php
 
-$isnew = True;
-if($isnew == True)
-	$pagetitle = '撰写新文章';
-else
-	$pagetitle = '编辑文章';
-echo '
+require 'includes/checklogin.php';
+
+if($islogin==True){
+
+	$isnew = True;
+	if($isnew == True)
+		$pagetitle = '撰写新文章';
+	else
+		$pagetitle = '编辑文章';
+
+
+	echo '
 
 <!DOCTYPE HTML>
 <html>
 ';
-echo '
+
+	echo '
 <head>
 <title>' . $pagetitle . ' - Cremunity</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -58,19 +65,19 @@ echo '
                             Please fill details to send a new message
                         </div>
                         <hr>-->
-						
+						<form id="dw__post-editor" action="post-editor.php" method="post" accept-charset="utf-8">
 						<div class="form-group">
 							<!--<label for="focusedinput" class="col-sm-2 control-label">Focused Input</label>-->
 							<div class="col-sm-256">
-								<input type="text" class="form-control1" id="focusedinput" placeholder="请在这里输入文章标题">
+								<input type="text" class="form-control1" id="focusedinput" name="post-title" placeholder="请在这里输入文章标题">
 							</div>
 						</div>
 						
 						
 						<div class="form-group">
 									<label for="selector1" class="col-sm-4 control-label">文章分类</label>
-									<div class="col-sm-8"><select name="selector1" id="selector1" class="form-control1">
-										<option>默认分类</option>
+									<div class="col-sm-8"><select name="selector" id="selector1" class="form-control1">
+										<option>Default</option>
 										<option>分类1</option>
 										<option>分类2</option>
 										<option>分类3</option>
@@ -82,10 +89,15 @@ echo '
                         <label>Enter Subject :  </label>
                         <input type="text" class="form-control1 control3">-->
                         <label>正文</label>
-                        <textarea rows="6" class="form-control1 control2"></textarea>
+                        <textarea rows="6" name="post-content" class="form-control1 control2"></textarea>
                         <hr>
-                        <a href="#" class="btn btn-warning btn-warng1"><span class="glyphicon glyphicon-envelope tag_02"></span> 发布文章 </a>&nbsp;
-                      <a href="#" class="btn btn-success btn-warng1"><span class="glyphicon glyphicon-tags tag_01"></span> 保存草稿 </a>
+                        <!--<a href="#" class="btn btn-warning btn-warng1"><span class="glyphicon glyphicon-envelope tag_02"></span> 发布文章 </a>&nbsp;
+						<a href="#" class="btn btn-warning btn-warng1"><button type ="submit" class="glyphicon glyphicon-envelope tag_02">发布文章</button>  </a>&nbsp;-->
+						
+						<div class="submit app-cam"><input id="bt_login" type="submit" onclick="func_login()" value="发布文章"></div> &nbsp;
+						
+						<!--<a href="#" class="btn btn-success btn-warng1"><span class="glyphicon glyphicon-tags tag_01"></span> 保存草稿 </a>-->
+						</form>
                     </div>
                  </div>
               </div>
@@ -224,6 +236,11 @@ echo '
 
 
 ';
-
+}
+else
+{
+	echo'<script> location.replace ("login.php") </script>'; 
+	exit();
+}
 
 ?>

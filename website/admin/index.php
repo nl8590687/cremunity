@@ -1,7 +1,7 @@
 <?php
 
+require 'includes/checklogin.php';
 
-$islogin = True;
 
 if($islogin==True){
 	echo '

@@ -1,5 +1,44 @@
 <?php
 
+$weburl='cm_ailemon_wang';
+
+$uName='';
+$uPwd='';
+
+//首先检查是否有POST注册
+if(!empty($_POST['uName'])&& !empty($_POST['uPwd'])&& !empty($_POST['uPwd2'])&& !empty($_POST['uGender'])&& !empty($_POST['uRealname'])&& !empty($_POST['uTel'])&& !empty($_POST['uEmail'])&& !empty($_POST['uCity']))
+{
+	$uName = $_POST['uName'];
+	$uPwd = $_POST['uPwd'];
+	
+	$uPwd=strtoupper($uPwd);
+	$uPwd=md5('cmuser' . $uPwd . 'pwd');    //加盐
+	
+	$con = mysqli_connect("localhost","root","123456");
+	if (!$con)
+	{
+		die('Could not connect: ' . mysqli_error());
+	}
+	//选取数据库 cremunity
+	mysqli_select_db($con,"cremunity");
+	
+	//添加用户数据在userinfo:  user information
+	$sql = "
+	CALL ADD_USERINFO(" . $uName . ", " . $uPwd . ");
+	";
+	$r = mysqli_query($con,$sql);
+	
+	if ($r)
+	{
+		//echo '成功';
+	}
+	else
+	{
+		//echo '失败';
+	}
+}
+
+
 echo '
 
 <!DOCTYPE HTML>

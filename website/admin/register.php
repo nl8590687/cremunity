@@ -5,14 +5,20 @@ $weburl='cm_ailemon_wang';
 $uName='';
 $uPwd='';
 
+//echo $_POST['uName'] . $_POST['uPwd'] . $_POST['uPwd2'] . $_POST['uRealname'] . $_POST['uTel'] . $_POST['uEmail'] . $_POST['uCity'];
+//echo !empty($_POST['uName'])&& !empty($_POST['uPwd'])&& !empty($_POST['uPwd2'])&& !empty($_POST['uRealname'])&& !empty($_POST['uTel'])&& !empty($_POST['uEmail'])&& !empty($_POST['uCity']);
+
 //首先检查是否有POST注册
-if(!empty($_POST['uName'])&& !empty($_POST['uPwd'])&& !empty($_POST['uPwd2'])&& !empty($_POST['uGender'])&& !empty($_POST['uRealname'])&& !empty($_POST['uTel'])&& !empty($_POST['uEmail'])&& !empty($_POST['uCity']))
+if(!empty($_POST['uName'])&& !empty($_POST['uPwd'])&& !empty($_POST['uPwd2'])&& !empty($_POST['uSex'])&& !empty($_POST['uRealname'])&& !empty($_POST['uTel'])&& !empty($_POST['uEmail'])&& !empty($_POST['uCity']))
 {
+	//echo 'test page';
+	
 	$uName = $_POST['uName'];
 	$uPwd = $_POST['uPwd'];
 	
 	$uPwd=strtoupper($uPwd);
 	$uPwd=md5('cmuser' . $uPwd . 'pwd');    //加盐
+	$uPwd=strtoupper($uPwd);
 	
 	$con = mysqli_connect("localhost","root","123456");
 	if (!$con)
@@ -24,18 +30,28 @@ if(!empty($_POST['uName'])&& !empty($_POST['uPwd'])&& !empty($_POST['uPwd2'])&& 
 	
 	//添加用户数据在userinfo:  user information
 	$sql = "
-	CALL ADD_USERINFO(" . $uName . ", " . $uPwd . ");
+	CALL ADD_USERINFO('" . $uName . "', '" . $uPwd . "');
 	";
 	$r = mysqli_query($con,$sql);
 	
 	if ($r)
 	{
-		//echo '成功';
+		//echo '注册成功';
+		echo '<script> alert("注册成功 !"); location.replace (".") </script>'; 
+		
+		//设置cookie
+		setcookie($weburl.'_username',$GLOBALS['uName'],time()+2*7*24*3600,'/');
+		setcookie($weburl.'_password',strtoupper($uPwd),time()+2*7*24*3600,'/');
 	}
 	else
 	{
 		//echo '失败';
+		echo '<script> alert("注册失败 !"); location.replace ("register.php") </script>';  
 	}
+	
+	mysqli_close($con);
+	
+	exit;
 }
 
 

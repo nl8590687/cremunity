@@ -1,7 +1,6 @@
 ## Ignore some files and folders for copyright and other reasons. 
 
 *.config
-*.jpg
-*.gif
-*.png
-*.ico
+
+
+website/aspnet_client

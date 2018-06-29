@@ -6,6 +6,15 @@ require 'includes/checklogin.php';
 //$islogin = True;
 
 if($islogin==True){//当用户登陆的时候
+
+$con = mysqli_connect("localhost","root","123456");
+if (!$con)
+{
+	die('Could not connect: ' . mysqli_error());
+}
+//选取数据库 cremunity
+mysqli_select_db($con,"cremunity");
+
 echo '
 <!DOCTYPE HTML>
 <html>
@@ -42,22 +51,65 @@ echo '
 
 require 'includes/navbar.php';
 
+//查询文章数量
+$sql = "
+SELECT count(AID)
+FROM artiinfo,userinfo 
+WHERE NAME='" . $uName . "' AND artiinfo.id = userinfo.id ;
+";
+$r = mysqli_query($con,$sql);
+
+$count_arti=0;
+while($row = mysqli_fetch_array( $r ) )
+{
+	$count_arti = intval($row["count(AID)"]);
+}
+
+//echo '[][][]' . $count_arti;
+$count_page= intval($count_arti / 10);
+//echo '[][][]' . $count_page;
+
+if($count_arti % 10 >= 1)
+	$count_page= $count_page + 1;
+
+//echo '[][][]' . $count_page;
+
+//设置页面的页面号，默认为第一页，即0
+$page_num = 0;
+if(!empty($_GET['page']))
+{
+	$page_num = intval($_GET['page']) - 1;
+}
+
 //翻页导航按钮工具
 $navigate_tool = '
    <ul class="pagination">
 		<li class="disabled"><span><i class="fa fa-angle-left"><i class="fa fa-angle-left"></i></i></span></li>
-		<li class="disabled"><a href="#"><i class="fa fa-angle-left"></i></a></li>
-		<li class="active"><span>1</span></li>
-		<li><a href="#">2</a></li>
-		<li><a href="#">3</a></li>
-		<li><a href="#">4</a></li>
-		<li><a href="#">5</a></li>
+		<li class="disabled"><a href="?page=' . strval($page_num) . '"><i class="fa fa-angle-left"></i></a></li>';
+		
+for($i=0; $i<$count_page; $i += 1)
+{
+	if($i!=$count_page - 1)
+	{
+		$navigate_tool = $navigate_tool . '
+		<li><a href="?page=' . strval($i + 1) . '">' . strval($i + 1) . '</a></li>
+	';
+	}
+	else
+	{
+		$navigate_tool = $navigate_tool . '
+		<li class="active"><span>' . strval($i + 1) . '</span></li>
+		';
+	}
+	
+}
+$navigate_tool = $navigate_tool . '
 		<li class="disabled"><span>...</span></li>
-		<li><a href="#"><i class="fa fa-angle-right"></i></a></li>
+		<li class="disabled"><a href="?page=' . strval($page_num + 2) . '"><i class="fa fa-angle-right"></i></a></li>
 		<li><a href="#"><i class="fa fa-angle-right"><i class="fa fa-angle-right"></i></i></a></li>
 	</ul>
 	<ul class="pagination">
-		<li class="disabled"><span>1 / 10</span></li>
+		<li class="disabled"><span>' . strval($page_num + 1) . ' / ' . $count_page . '</span></li>
 	</ul>
 ';
 
@@ -85,6 +137,58 @@ echo '
 							</tr>
 						</thead>
 						<tbody>';
+
+
+//echo 'aaaaa' . $page_num;
+
+$arti_startid=$page_num*10;
+$arti_endid=$arti_startid+10;
+
+
+
+
+
+//查找文章信息
+$sql = "
+SELECT AID,TITLE,CATEGORY,CONTENT,TIME 
+FROM artiinfo,userinfo 
+WHERE NAME='" . $uName . "' AND artiinfo.id = userinfo.id 
+LIMIT ".$arti_startid.",".$arti_endid.";
+";
+$r = mysqli_query($con,$sql);
+
+$arti_count=0;
+while($arti_count < 10 && $row = mysqli_fetch_array( $r ) )
+{
+	$arti_id = $row["AID"];
+	$arti_title = $row["TITLE"];
+	$arti_category = $row["CATEGORY"];
+	$arti_content = $row["CONTENT"];
+	$arti_time = $row["TIME"];
+	
+	//echo 'aaaaa' . $arti_id;
+	//echo 'bbbbb' . $arti_title;
+	
+	if($arti_count % 2 == 0)
+		echo PHP_EOL . '		<tr class="active">' . PHP_EOL;
+	else
+		echo PHP_EOL . '		<tr>' . PHP_EOL;
+	
+	echo '
+			<th scope="row">' . strval($arti_count + 1) . '</th>
+			<td><a href="../post.php?aid=' . strval($arti_id) . '">' . $arti_title . '</a></td>
+			<td>' . $arti_category . '</td>
+			<td>' . strval($arti_time) . '</td>
+			<td>0 / 0</td>
+			<td><a href="post-editor.php?aid=' . $arti_id . '&action=edit">编辑</a> &nbsp; <a href="post-editor.php?aid=' . $arti_id . '&action=delete">删除</a></td>
+		</tr>
+	
+	';
+	
+	$arti_count += 1;
+}
+
+if(false)
 echo '
         <tr class="active">
           <th scope="row">1</th>

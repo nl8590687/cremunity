@@ -54,8 +54,8 @@ require 'includes/navbar.php';
 //查询文章数量
 $sql = "
 SELECT count(AID)
-FROM artiinfo,userinfo 
-WHERE NAME='" . $uName . "' AND artiinfo.id = userinfo.id ;
+FROM ARTIINFO,USERINFO 
+WHERE NAME='" . $uName . "' AND ARTIINFO.ID = USERINFO.ID ;
 ";
 $r = mysqli_query($con,$sql);
 
@@ -151,8 +151,8 @@ $arti_endid=$arti_startid+10;
 //查找文章信息
 $sql = "
 SELECT AID,TITLE,CATEGORY,CONTENT,TIME 
-FROM artiinfo,userinfo 
-WHERE NAME='" . $uName . "' AND artiinfo.id = userinfo.id 
+FROM ARTIINFO,USERINFO 
+WHERE NAME='" . $uName . "' AND ARTIINFO.ID = USERINFO.ID 
 LIMIT ".$arti_startid.",".$arti_endid.";
 ";
 $r = mysqli_query($con,$sql);

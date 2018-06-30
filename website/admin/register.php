@@ -20,7 +20,8 @@ if(!empty($_POST['uName'])&& !empty($_POST['uPwd'])&& !empty($_POST['uPwd2'])&& 
 	$uPwd=md5('cmuser' . $uPwd . 'pwd');    //加盐
 	$uPwd=strtoupper($uPwd);
 	
-	$con = mysqli_connect("localhost","root","123456");
+	require 'includes/sqlmng.php';
+	$con = mysqli_connect($host,$username,$pswd);
 	if (!$con)
 	{
 		die('Could not connect: ' . mysqli_error());

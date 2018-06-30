@@ -1,5 +1,7 @@
 <?php
 
+require 'includes/sqlmng.php';
+
 $weburl='cm_ailemon_wang';
 
 $uName='';
@@ -23,7 +25,7 @@ if (!empty($_COOKIE[$weburl.'_username'])&&!empty($_COOKIE[$weburl.'_password'])
 
 
 
-$con = mysqli_connect("localhost","root","123456");
+$con = mysqli_connect($host,$username,$pswd);
 if (!$con)
 {
   die('Could not connect: ' . mysqli_error());

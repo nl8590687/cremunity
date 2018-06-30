@@ -1,6 +1,6 @@
 <?php
 
-$con = mysqli_connect("localhost","root","123456");
+$con = mysqli_connect($host,$username,$pswd);
 if (!$con)
 {
   die('Could not connect: ' . mysqli_error());
@@ -22,9 +22,9 @@ echo '
 
 							<!-- page-title start -->
 							<!-- ================ -->
-							<h1 class="page-title">Blog</h1>
+							<h1 class="page-title">内容浏览</h1>
 							<div class="separator-2"></div>
-							<p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas nulla suscipit <br class="hidden-sm hidden-xs"> unde rerum mollitia dolorum.</p>
+							<p class="lead">创作，从这里开始： <br class="hidden-sm hidden-xs"> Cremunity</p>
 							<!-- page-title end -->';
 							$i=0;
 							//开始显示方格子
@@ -40,10 +40,11 @@ echo '
 									</div>
 									<div class="blogpost-content">
 										<header>
-											<h2 class="title"><a href="post.php">Text Blogpost</a></h2>
+											<h2 class="title"><a href="post.php">测试文章' . $i . '</a></h2>
 											<div class="submitted"><i class="fa fa-user pr-5"></i> by <a href="#">John Doe</a></div>
 										</header>
-										<p>Mauris dolor sapien, malesuada at interdum ut, hendrerit eget lorem. Nunc interdum mi neque, et  sollicitudin purus fermentum ut. Suspendisse faucibus nibh odio, a vehicula eros pharetra in. Maecenas  ullamcorper commodo rutrum. In iaculis lectus vel augue eleifend dignissim. Aenean viverra semper sollicitudin.</p>
+										<p>这里是文章的内容
+，我们可以在这里浏览文章的摘要内容。文章的摘要内容或者前若干文本的内容会显示在这里，通过这里，人们可以很清楚地基本了解文章的大概内容，方便人们的阅读，提升人们的阅读效率，减少人们阅读无意义内容而消耗的时间。</p>
 									</div>
 								</div>
 								<footer class="clearfix">

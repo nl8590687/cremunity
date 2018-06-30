@@ -11,7 +11,8 @@ if($islogin==True){
 	$category=''; //存储文章目录
 	$content=''; // 存储文章内容
 	
-	$con = mysqli_connect("localhost","root","123456");
+	require 'includes/sqlmng.php';
+	$con = mysqli_connect($host,$username,$pswd);
 	if (!$con)
 	{
 		die('Could not connect: ' . mysqli_error());

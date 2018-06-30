@@ -1,6 +1,6 @@
 <?php
 
-$post_title ='Blogpost Title';
+$post_title ='测试文章';
 $post_date_year = '';
 $post_date_month = '';
 $post_date_day = '';
@@ -41,7 +41,7 @@ echo '
 										<header>
 											<div class="submitted"><i class="fa fa-user pr-5"></i> by <a href="#">John Doe</a></div>
 										</header>
-										<div class="owl-carousel content-slider-with-controls">
+										<!--<div class="owl-carousel content-slider-with-controls">
 											<div class="overlay-container">
 												<img src="images/blog-1.jpg" alt="">
 												<a href="images/blog-1.jpg" class="popup-img overlay" title="image title"><i class="fa fa-search-plus"></i></a>
@@ -54,8 +54,9 @@ echo '
 												<img src="images/blog-3.jpg" alt="">
 												<a href="images/blog-3.jpg" class="popup-img overlay" title="image title"><i class="fa fa-search-plus"></i></a>
 											</div>
-										</div>
-										<p>Amet culpa, accusamus. Temporibus animi, consequatur cumque natus, esse consequuntur voluptatibus deleniti necessitatibus autem architecto quaerat tenetur nobis, ea maxime saepe rem doloribus placeat aliquid quod, id fuga ratione error harum ex! Facere vero veniam ducimus nulla sed possimus nobis nisi maiores quibusdam, nam odit quos dolores laborum pariatur distinctio in ex culpa impedit. Corrupti sequi perferendis atque nam debitis ea sunt, vel mollitia voluptas tempora eaque 
+										</div>-->
+										<p>>这是一篇测试文章
+，用来测试文章页面是否正确，逻辑和布局等。Amet culpa, accusamus. Temporibus animi, consequatur cumque natus, esse consequuntur voluptatibus deleniti necessitatibus autem architecto quaerat tenetur nobis, ea maxime saepe rem doloribus placeat aliquid quod, id fuga ratione error harum ex! Facere vero veniam ducimus nulla sed possimus nobis nisi maiores quibusdam, nam odit quos dolores laborum pariatur distinctio in ex culpa impedit. Corrupti sequi perferendis atque nam debitis ea sunt, vel mollitia voluptas tempora eaque 
 										Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
 										<p>Inventore, distinctio esse impedit deleniti, magnam minus culpa quia repellendus eligendi nam, omnis qui odio dolorem autem molestias eveniet tempora rem odit possimus! At ea quidem, ipsa ducimus harum quod neque expedita perferendis, quis odio officiis dicta facere qui architecto! Neque, odio quidem a cum perferendis doloribus iure aut ducimus, eveniet commodi unde consequatur iusto error excepturi perspiciatis cupiditate voluptates ad, minus, magnam voluptatem tempora quae at temporibus incidunt. est reprehenderit, voluptates culpa, numquam minima.</p>
 										<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex, eligendi cum officiis sint eveniet omnis eius quo. Et iusto eos dolor ratione nesciunt praesentium eveniet distinctio repellat. Quas, soluta, ipsam.</p>

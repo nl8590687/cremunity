@@ -1,6 +1,6 @@
 <?php
-
-$con = mysqli_connect("localhost","root","123456");
+require 'admin/includes/sqlmng.php';
+$con = mysqli_connect($host,$username,$pswd);
 if (!$con)
 {
   die('Could not connect: ' . mysqli_error());

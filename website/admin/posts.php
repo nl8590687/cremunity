@@ -6,8 +6,8 @@ require 'includes/checklogin.php';
 //$islogin = True;
 
 if($islogin==True){//当用户登陆的时候
-
-$con = mysqli_connect("localhost","root","123456");
+require 'includes/sqlmng.php';
+$con = mysqli_connect($host,$username,$pswd);
 if (!$con)
 {
 	die('Could not connect: ' . mysqli_error());

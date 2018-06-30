@@ -55,7 +55,7 @@ echo '
 											<div class="collapse navbar-collapse" id="navbar-collapse-1">
 												<ul class="nav navbar-nav navbar-right">
 													<li class="dropdown active">
-														<a href="index.html" class="dropdown-toggle" data-toggle="dropdown">Home</a>
+														<a href="index.html" class="dropdown-toggle" data-toggle="dropdown">首页</a>
 														<ul class="dropdown-menu">
 															<li class="active"><a href="index.html">Home - Default</a></li>
 															<li><a href="index-2.html">Home - 2</a></li>
@@ -69,7 +69,7 @@ echo '
 													</li>
 													<!-- mega-menu start -->
 													<li class="dropdown mega-menu">
-														<a href="#" class="dropdown-toggle" data-toggle="dropdown">Pages</a>
+														<a href="#" class="dropdown-toggle" data-toggle="dropdown">文章分类</a>
 														<ul class="dropdown-menu">
 															<li>
 																<div class="row">
@@ -121,7 +121,7 @@ echo '
 													</li>
 													<!-- mega-menu end -->
 													<li class="dropdown">
-														<a href="#" class="dropdown-toggle" data-toggle="dropdown">Features</a>
+														<a href="#" class="dropdown-toggle" data-toggle="dropdown">最新文章</a>
 														<ul class="dropdown-menu">
 															<li><a href="features-typography.html">Typography</a></li>
 															<li class="dropdown">
@@ -164,7 +164,7 @@ echo '
 													</li>
 													<!-- mega-menu start -->
 													<li class="dropdown mega-menu">
-														<a href="#" class="dropdown-toggle" data-toggle="dropdown">Components</a>
+														<a href="#" class="dropdown-toggle" data-toggle="dropdown">每天转载</a>
 														<ul class="dropdown-menu">
 															<li>
 																<div class="row">
@@ -210,7 +210,7 @@ echo '
 													</li>
 													<!-- mega-menu end -->
 													<li class="dropdown">
-														<a href="portfolio-3col.html" class="dropdown-toggle" data-toggle="dropdown">Portfolio</a>
+														<a href="portfolio-3col.html" class="dropdown-toggle" data-toggle="dropdown">个人资料</a>
 														<ul class="dropdown-menu">
 															<li class="dropdown">
 																<a href="portfolio-3col.html" class="dropdown-toggle" data-toggle="dropdown">Portfolio - Style 1</a>
@@ -246,7 +246,7 @@ echo '
 														</ul>
 													</li>
 													<li class="dropdown">
-														<a href="shop-listing-3col.html" class="dropdown-toggle" data-toggle="dropdown">Shop</a>
+														<a href="shop-listing-3col.html" class="dropdown-toggle" data-toggle="dropdown">云天地</a>
 														<ul class="dropdown-menu">
 															<li><a href="shop-listing-3col.html">Shop - 3 Columns</a></li>
 															<li><a href="shop-listing-4col.html">Shop - 4 Columns</a></li>
@@ -259,7 +259,7 @@ echo '
 														</ul>
 													</li>
 													<li class="dropdown">
-														<a href="blog-right-sidebar.html" class="dropdown-toggle" data-toggle="dropdown">Blog</a>
+														<a href="blog-right-sidebar.html" class="dropdown-toggle" data-toggle="dropdown">系统管理</a>
 														<ul class="dropdown-menu">
 															<li><a href="blog-right-sidebar.html">Blog Right Sidebar</a></li>
 															<li><a href="blog-left-sidebar.html">Blog Left Sidebar</a></li>

@@ -4,7 +4,7 @@
 <html lang="zh-cn">
 <!--<![endif]-->
 <?php
-
+require 'admin/includes/sqlmng.php';
 require 'includes/head-index.php';
 
 ?>

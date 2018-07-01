@@ -65,11 +65,13 @@ while($row = mysqli_fetch_array( $r ) )
 	$count_arti = intval($row["count(AID)"]);
 }
 
+//每页显示的文章数
+$articount_peer_page = 10;
 //echo '[][][]' . $count_arti;
-$count_page= intval($count_arti / 10);
+$count_page= intval($count_arti / $articount_peer_page);
 //echo '[][][]' . $count_page;
 
-if($count_arti % 10 >= 1)
+if($count_arti % $articount_peer_page >= 1)
 	$count_page= $count_page + 1;
 
 //echo '[][][]' . $count_page;
@@ -89,7 +91,7 @@ $navigate_tool = '
 		
 for($i=0; $i<$count_page; $i += 1)
 {
-	if($i!=$count_page - 1)
+	if($i != $page_num)
 	{
 		$navigate_tool = $navigate_tool . '
 		<li><a href="?page=' . strval($i + 1) . '">' . strval($i + 1) . '</a></li>
@@ -141,8 +143,10 @@ echo '
 
 //echo 'aaaaa' . $page_num;
 
-$arti_startid=$page_num*10;
-$arti_endid=$arti_startid+10;
+
+
+$arti_startid=$page_num * $articount_peer_page;
+$arti_endid=$arti_startid + $articount_peer_page;
 
 
 
@@ -158,7 +162,7 @@ LIMIT ".$arti_startid.",".$arti_endid.";
 $r = mysqli_query($con,$sql);
 
 $arti_count=0;
-while($arti_count < 10 && $row = mysqli_fetch_array( $r ) )
+while($arti_count < $articount_peer_page && $row = mysqli_fetch_array( $r ) )
 {
 	$arti_id = $row["AID"];
 	$arti_title = $row["TITLE"];

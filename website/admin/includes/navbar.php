@@ -105,7 +105,7 @@ echo '
                 <div class="sidebar-nav navbar-collapse">
                     <ul class="nav" id="side-menu">
                         <li>
-                            <a href="."><i class="fa fa-dashboard fa-fw nav_icon"></i>Dashboard</a>
+                            <a href="."><i class="fa fa-dashboard fa-fw nav_icon"></i>仪表盘</a>
                         </li>
 						
                         <li>

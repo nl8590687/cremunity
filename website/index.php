@@ -5,6 +5,7 @@
 <!--<![endif]-->
 	
 <?php
+require 'admin/includes/sqlmng.php';
 
 require 'includes/head-index.php';
 
@@ -23,7 +24,7 @@ require 'includes/head-index.php';
 		<div class="page-wrapper">
 
 <?php 
-require 'admin/includes/sqlmng.php';
+//require 'admin/includes/sqlmng.php';
 
 require 'includes/header-top.php';
 require 'includes/header.php';

@@ -277,9 +277,11 @@ echo '
 									<label for="selector1" class="col-sm-4 control-label">文章分类</label>
 									<div class="col-sm-8"><select name="selector" id="selector1" class="form-control1" value="' . $category . '">
 										<option>Default</option>
-										<option>分类1</option>
-										<option>分类2</option>
-										<option>分类3</option>
+										<option>体育</option>
+										<option>校园</option>
+										<option>社会</option>
+										<option>科技</option>
+										<option>心灵花园</option>
 									</select></div>
 								</div>
 						</br></br>

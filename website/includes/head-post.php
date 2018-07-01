@@ -1,7 +1,7 @@
 <?php
 
-$website_title = 'Blog';
-$website_author ='htmlcoder.me';
+$website_title = $post_title . ' - Cremunity';
+$website_author = 'htmlcoder.me';
 $website_icon_url = 'images/favicon.ico';
 
 $skins_url = 'css/skins/blue.css';

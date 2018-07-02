@@ -26,7 +26,7 @@ require 'includes/head-index.php';
 <?php 
 require 'includes/header-top.php';
 require 'includes/header.php';
-require 'includes/main-container.php';
+require 'includes/search-container.php';
 require 'includes/footer.php';
 
 ?>

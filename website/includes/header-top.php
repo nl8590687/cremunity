@@ -1,5 +1,8 @@
 <?php
 
+$weburl='cm_ailemon_wang';
+$islogin_top = False;
+
 echo '<!-- header-top start -->
 			<!-- ================ -->
 			<div class="header-top">
@@ -49,7 +52,7 @@ echo '<!-- header-top start -->
 								<!-- ================ -->
 								<div class="header-top-dropdown">
 									<div class="btn-group dropdown">
-										<button type="button" class="btn dropdown-toggle" data-toggle="dropdown"><i class="fa fa-search"></i> Search</button>
+										<button type="button" class="btn dropdown-toggle" data-toggle="dropdown"><i class="fa fa-search"></i> 搜索</button>
 										<ul class="dropdown-menu dropdown-menu-right dropdown-animation">
 											<li>
 												<form role="search" class="search-box"  id="searchform" action="search.php" method="GET" accept-charset="utf-8">
@@ -60,9 +63,23 @@ echo '<!-- header-top start -->
 												</form>
 											</li>
 										</ul>
-									</div>
+									</div>';
+// 如果cookie存在，那么用户已经登陆，直接跳转
+if (!empty($_COOKIE[$weburl.'_username'])&&!empty($_COOKIE[$weburl.'_password']))
+{
+	$uName_top=$_COOKIE[$weburl.'_username'];
+	$uPwd_top=$_COOKIE[$weburl.'_password'];
+	
+	$islogin_top = True;
+	//echo 'cookie 存在';
+	//$uPwd=md5(uniqid($uPwd,true));
+	//echo'<script> location.replace (".") </script>'; 
+	//exit();
+}
+if($islogin_top == False)
+	echo '
 									<div class="btn-group dropdown">
-										<button type="button" class="btn dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> Login</button>
+										<button type="button" class="btn dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> 用户登录</button>
 										<ul class="dropdown-menu dropdown-menu-right dropdown-animation">
 											<li>
 												<form class="login-form" id="dw__login" action="admin/login.php" method="post" accept-charset="utf-8">
@@ -92,9 +109,11 @@ echo '<!-- header-top start -->
 												</form>
 											</li>
 										</ul>
-									</div>
+									</div>';
+else
+	echo '
 									<div class="btn-group dropdown">
-										<button type="button" class="btn dropdown-toggle" data-toggle="dropdown"><i class="fa fa-shopping-cart"></i> Cart (8)</button>
+										<button type="button" class="btn dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> ' . $uName_top . ' 欢迎您</button>
 										<ul class="dropdown-menu dropdown-menu-right dropdown-animation cart">
 											<li>
 												<table class="table table-hover">
@@ -128,13 +147,15 @@ echo '<!-- header-top start -->
 													</tbody>
 												</table>
 												<div class="panel-body text-right">	
-												<a href="shop-cart.html" class="btn btn-group btn-default btn-sm">View Cart</a>
-												<a href="shop-checkout.html" class="btn btn-group btn-default btn-sm">Checkout</a>
+												<a href="admin/" class="btn btn-group btn-default btn-sm" target="_blank">打开仪表盘</a>
+												<a href="admin/logout.php" class="btn btn-group btn-default btn-sm">注销登录</a>
 												</div>
 											</li>
 										</ul>
-									</div>
+									</div>';
 
+
+echo '
 								</div>
 								<!--  header top dropdowns end -->
 

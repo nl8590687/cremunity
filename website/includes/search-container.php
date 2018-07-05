@@ -13,11 +13,19 @@ if (!$con)
 //选取数据库 cremunity
 mysqli_select_db($con,"cremunity");
 
+
+$search_keyword = '';
+
+if(!empty($_GET['searchword']))
+{
+	$search_keyword = $_GET['searchword'];
+}
+
 //查询文章数量
 $sql = "
 SELECT count(AID)
 FROM ARTIINFO,USERINFO 
-WHERE ARTIINFO.ID = USERINFO.ID ;
+WHERE ARTIINFO.ID = USERINFO.ID AND TITLE LIKE '%" . $search_keyword . "%';
 ";
 $r = mysqli_query($con,$sql);
 
@@ -44,12 +52,6 @@ if(!empty($_GET['page']))
 	$page_num = intval($_GET['page']) - 1;
 }
 
-$search_keyword = '';
-
-if(!empty($_GET['searchword']))
-{
-	$page_num = $_GET['searchword'];
-}
 
 
 $arti_startid=$page_num * $articount_peer_page;
@@ -61,7 +63,7 @@ $arti_endid=$arti_startid + $articount_peer_page;
 $sql = "
 SELECT AID,TITLE,TIME,NAME,CATEGORY,CONTENT 
 FROM ARTIINFO,USERINFO
-WHERE ARTIINFO.ID=USERINFO.ID
+WHERE ARTIINFO.ID=USERINFO.ID AND TITLE LIKE '%" . $search_keyword . "%'
 ORDER BY AID DESC
 LIMIT ".$arti_startid.",".$arti_endid."
 ;

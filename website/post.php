@@ -43,6 +43,7 @@ $post_content ='aaaaaaaaa
 
 require 'admin/includes/sqlmng.php';
 $con = mysqli_connect($host,$username,$pswd);
+mysqli_set_charset($con, 'utf8');
 if (!$con)
 {
 	die('Could not connect: ' . mysqli_error());

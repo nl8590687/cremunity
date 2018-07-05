@@ -8,6 +8,9 @@ require 'includes/checklogin.php';
 if($islogin==True){//当用户登陆的时候
 require 'includes/sqlmng.php';
 $con = mysqli_connect($host,$username,$pswd);
+
+mysqli_set_charset($con, 'utf8');
+
 if (!$con)
 {
 	die('Could not connect: ' . mysqli_error());
@@ -157,6 +160,7 @@ $sql = "
 SELECT AID,TITLE,CATEGORY,CONTENT,TIME 
 FROM ARTIINFO,USERINFO 
 WHERE NAME='" . $uName . "' AND ARTIINFO.ID = USERINFO.ID 
+ORDER BY AID DESC 
 LIMIT ".$arti_startid.",".$arti_endid.";
 ";
 $r = mysqli_query($con,$sql);

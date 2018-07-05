@@ -147,7 +147,7 @@ else
 													</tbody>
 												</table>
 												<div class="panel-body text-right">	
-												<a href="admin/" class="btn btn-group btn-default btn-sm" target="_blank">打开仪表盘</a>
+												<a href="admin/" class="btn btn-group btn-default btn-sm">打开仪表盘</a>
 												<a href="admin/logout.php" class="btn btn-group btn-default btn-sm">注销登录</a>
 												</div>
 											</li>

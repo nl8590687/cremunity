@@ -1,6 +1,8 @@
 <?php
 
 $con = mysqli_connect($host,$username,$pswd);
+
+mysqli_set_charset($con, 'utf8');
 if (!$con)
 {
   die('Could not connect: ' . mysqli_error());
@@ -42,11 +44,6 @@ if(!empty($_GET['page']))
 	$page_num = intval($_GET['page']) - 1;
 }
 
-
-
-
-
-
 $arti_startid=$page_num * $articount_peer_page;
 $arti_endid=$arti_startid + $articount_peer_page;
 
@@ -57,6 +54,7 @@ $sql = "
 SELECT AID,TITLE,TIME,NAME,CATEGORY,CONTENT 
 FROM ARTIINFO,USERINFO
 WHERE ARTIINFO.ID=USERINFO.ID
+ORDER BY AID DESC
 LIMIT ".$arti_startid.",".$arti_endid."
 ;
 ";

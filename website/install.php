@@ -1,6 +1,7 @@
 <?php
 require 'admin/includes/sqlmng.php';
 $con = mysqli_connect($host,$username,$pswd);
+mysqli_set_charset($con, 'utf8');
 if (!$con)
 {
   die('Could not connect: ' . mysqli_error());
@@ -41,7 +42,7 @@ else
 //创建数据表 categories:  list of categories
 $sql = "
 CREATE TABLE CATEGORIES(
-`CATEGORY` VARCHAR(10) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL PRIMARY KEY
+`CATEGORY` VARCHAR(30) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL PRIMARY KEY
 );
 ";
 $r = mysqli_query($con,$sql);
@@ -59,7 +60,7 @@ else
 $sql = "
 CREATE TABLE ARTIINFO(
 `AID` INT(10) NOT NULL AUTO_INCREMENT PRIMARY KEY,
-`TITLE` VARCHAR(30) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+`TITLE` VARCHAR(90) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
 `ID` INT(10), -- author id
 `CATEGORY` VARCHAR(10) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
 `CONTENT` TEXT CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
@@ -340,7 +341,6 @@ else
 	echo '失败';
 }
 
-
 //调用存储过程 ADD_CATEGORIES
 $sql = "
 call ADD_CATEGORIES('Default');
@@ -355,6 +355,24 @@ else
 	echo '失败';
 }
 
+/*
+$sql = "
+call ADD_CATEGORIES('Sports');
+call ADD_CATEGORIES('University');
+call ADD_CATEGORIES('Society');
+call ADD_CATEGORIES('Technology');
+call ADD_CATEGORIES('Feelings');
+";
+
+$r = mysqli_multi_query($con,$sql)
+if ($r)
+{
+	echo '成功';
+}
+else
+{
+	echo '失败';
+}*/
 
 //调用存储过程 ADD_ARTIINFO
 $sql = "

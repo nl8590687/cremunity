@@ -14,7 +14,7 @@ echo '
 
 								<!-- logo -->
 								<div class="logo">
-									<a href="index.html"><img id="logo" src="images/logo_red.png" alt="iDea"></a>
+									<a href="."><img id="logo" src="images/logo_red.png" alt="iDea"></a>
 								</div>
 
 								<!-- name-and-slogan -->
@@ -55,9 +55,9 @@ echo '
 											<div class="collapse navbar-collapse" id="navbar-collapse-1">
 												<ul class="nav navbar-nav navbar-right">
 													<li class="dropdown active">
-														<a href="index.html" class="dropdown-toggle" data-toggle="dropdown">首页</a>
-														<ul class="dropdown-menu">
-															<li class="active"><a href="index.html">Home - Default</a></li>
+														<a href="." class="dropdown-toggle" data-toggle="dropdown">首页</a>
+														<!--<ul class="dropdown-menu">
+															<li class="active"><a href=".">Home - Default</a></li>
 															<li><a href="index-2.html">Home - 2</a></li>
 															<li><a href="index-3.html">Home - 3</a></li>
 															<li><a href="index-4.html">Home - 4</a></li>
@@ -65,7 +65,7 @@ echo '
 															<li><a href="index-one-page.html">One Page Version</a></li>
 															<li><a href="index-boxed-slideshow.html">Home - Boxed Slider</a></li>
 															<li><a href="index-no-slideshow.html">Home - Without Slider</a></li>
-														</ul>
+														</ul>-->
 													</li>
 													<!-- mega-menu start -->
 													<li class="dropdown mega-menu">

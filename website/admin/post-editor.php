@@ -13,6 +13,7 @@ if($islogin==True){
 	
 	require 'includes/sqlmng.php';
 	$con = mysqli_connect($host,$username,$pswd);
+	mysqli_set_charset($con, 'utf8');
 	if (!$con)
 	{
 		die('Could not connect: ' . mysqli_error());
@@ -118,10 +119,11 @@ if($islogin==True){
 		}
 		
 		
-		//添加用户数据在userinfo:  user information
+		//添加文章
 		$sql = "
-		CALL ADD_ARTIINFO('" . $title . "', " . $user_id . ", '" . $category . "', '" . $content ."');
+		INSERT INTO ARTIINFO(TITLE,ID,CATEGORY,CONTENT,TIME) VALUES('" . $title . "'," . $user_id . ",'" . $category . "','" . $content ."',NOW());
 		";
+		//$sql = "CALL ADD_ARTIINFO('" . $title . "', " . $user_id . ", '" . $category . "', '" . $content ."');";
 		$r = mysqli_query($con,$sql);
 		
 		if ($r)
